@@ -5,24 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoSingleton<PlayerController>
 {
     [SerializeField] private float speed = 4;
-    [SerializeField] private GameObject missilePrefab;
-    [SerializeField] private Camera firstPersonCamera;
-    [SerializeField] private Camera thirdPersonCamera;
     private float horizontalInput;
     private float verticalInput;
 
-    private void Start()
-    {
-        thirdPersonCamera.enabled = true;
-        firstPersonCamera.enabled = false;
-    }
+    
 
-    // Update is called once per frame
     void Update()
     {
         MovePlayer();
-        FireMissile();
-        ChangeView();
     }
 
     private void MovePlayer()
@@ -34,20 +24,16 @@ public class PlayerController : MonoSingleton<PlayerController>
         transform.Translate(Vector3.up * verticalInput * speed * Time.deltaTime);
     }
 
-    public void FireMissile()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        GameManager.Instance.isFired = false;
+        GameManager.Instance.missileCamera.enabled = false;
+        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            GameObject missile = Instantiate(missilePrefab, transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
         }
     }
 
-    public void ChangeView()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            firstPersonCamera.enabled = !firstPersonCamera.enabled;
-            thirdPersonCamera.enabled = !thirdPersonCamera.enabled;
-        }
-    }
+
 }

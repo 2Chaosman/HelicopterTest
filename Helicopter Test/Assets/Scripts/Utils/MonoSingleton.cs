@@ -4,14 +4,14 @@ using UnityEngine;
 
 public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
 {
-    private static MonoSingleton<T> _instance;
-    public static MonoSingleton<T> Instance
+    private static T _instance;
+    public static T Instance
     {
         get
         {
             if(_instance == null)
             {
-                Debug.LogError("");
+                Debug.LogError(typeof(T).ToString() + " is NULL");
             }
 
             return _instance;

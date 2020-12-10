@@ -4830,9 +4830,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7685213573260013527}
+  - component: {fileID: 8721580478379904310}
+  - component: {fileID: 8721580478379904311}
   m_Layer: 0
   m_Name: EnemyTurret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4844,7 +4846,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7688635280723312333}
-  m_LocalRotation: {x: -0, y: 0.70186967, z: -0, w: 0.7123055}
+  m_LocalRotation: {x: 0, y: 0.7018673, z: 0, w: 0.7123078}
   m_LocalPosition: {x: -0.07777889, y: -1.2, z: 0.06990145}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -4853,6 +4855,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 89.15401, z: 0}
+--- !u!114 &8721580478379904310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7688635280723312333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f261f145cfa243b9979c786f6b25a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missilePrefab: {fileID: 1380609711597731491, guid: 50ff848e543c940c69ee406df10bb1cb,
+    type: 3}
+--- !u!65 &8721580478379904311
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7688635280723312333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2861953, y: 3.2179403, z: 2.71259}
+  m_Center: {x: 0.11676598, y: 1.1089547, z: 0.071522}
 --- !u!1 &7688680844589939417
 GameObject:
   m_ObjectHideFlags: 0

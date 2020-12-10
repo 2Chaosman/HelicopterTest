@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class EnemyController : MonoSingleton<EnemyController>
 {
-
-    /*TODO:
-        Стрельба по ракетам игрока
-        
-
-    */
-
     [SerializeField] private GameObject missilePrefab;
+    private Transform playerMissile;
 
     private void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        playerMissile = GameObject.Find("PlayerMissile").GetComponent<Transform>();
     }
 
     private void FireAtPlayersMissile()

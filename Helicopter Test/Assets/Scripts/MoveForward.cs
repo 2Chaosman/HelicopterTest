@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    private float speed = 3f;
+    private float speed = 5f;
 
     private void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
     }
 }
